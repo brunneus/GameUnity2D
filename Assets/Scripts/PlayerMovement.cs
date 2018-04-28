@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (transform.position.y < -10)
+			Destroy (gameObject);
+
         var h = Input.GetAxis("Horizontal");
 
         var grounded = IsGrounded();
@@ -49,4 +52,19 @@ public class PlayerMovement : MonoBehaviour {
 
         return hit.collider.gameObject != gameObject;
     }
+		
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpForce);
+			GetComponent<Collider2D> ().enabled = false;
+
+			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;
+
+			other.gameObject.GetComponent<InimigoBateVoltaScript> ().Dead ();
+
+		} else if (other.gameObject.tag == "Point") {
+			GameManagerScript.increaseScore ();
+			Destroy (other.gameObject);
+		}
+	}
 }
