@@ -1,0 +1,688 @@
+fileFormatVersion: 2
+guid: c97125f62ad1b004aab00b5637cef790
+timeCreated: 1525304252
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpriteSheet_personagem_principal_0
+    21300002: SpriteSheet_personagem_principal_1
+    21300004: SpriteSheet_personagem_principal_2
+    21300006: SpriteSheet_personagem_principal_3
+    21300008: SpriteSheet_personagem_principal_4
+    21300010: SpriteSheet_personagem_principal_5
+    21300012: SpriteSheet_personagem_principal_6
+    21300014: SpriteSheet_personagem_principal_7
+    21300016: SpriteSheet_personagem_principal_8
+    21300018: SpriteSheet_personagem_principal_9
+    21300020: SpriteSheet_personagem_principal_10
+    21300022: SpriteSheet_personagem_principal_11
+    21300024: SpriteSheet_personagem_principal_12
+    21300026: SpriteSheet_personagem_principal_13
+    21300028: SpriteSheet_personagem_principal_14
+    21300030: SpriteSheet_personagem_principal_15
+    21300032: SpriteSheet_personagem_principal_16
+    21300034: SpriteSheet_personagem_principal_17
+    21300036: SpriteSheet_personagem_principal_18
+    21300038: SpriteSheet_personagem_principal_19
+    21300040: SpriteSheet_personagem_principal_20
+    21300042: SpriteSheet_personagem_principal_21
+    21300044: SpriteSheet_personagem_principal_22
+    21300046: SpriteSheet_personagem_principal_23
+    21300048: SpriteSheet_personagem_principal_24
+    21300050: SpriteSheet_personagem_principal_25
+    21300052: SpriteSheet_personagem_principal_26
+    21300054: SpriteSheet_personagem_principal_27
+    21300056: SpriteSheet_personagem_principal_28
+    21300058: SpriteSheet_personagem_principal_29
+    21300060: SpriteSheet_personagem_principal_30
+    21300062: SpriteSheet_personagem_principal_31
+    21300064: SpriteSheet_personagem_principal_32
+    21300066: SpriteSheet_personagem_principal_33
+    21300068: SpriteSheet_personagem_principal_34
+    21300070: SpriteSheet_personagem_principal_35
+    21300072: SpriteSheet_personagem_principal_36
+    21300074: SpriteSheet_personagem_principal_37
+    21300076: SpriteSheet_personagem_principal_38
+    21300078: SpriteSheet_personagem_principal_39
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1836
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1836
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_2
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1836
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_3
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1836
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1632
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1632
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1632
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_7
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1632
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1428
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_9
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1428
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1428
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_11
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1428
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1224
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_13
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1224
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1224
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_15
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1224
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1020
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1020
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1020
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_19
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 1020
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 816
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_21
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 816
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_22
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 816
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_23
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 816
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_25
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 612
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_26
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 612
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_27
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 612
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 408
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 408
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_30
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 408
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_31
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 408
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 204
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_33
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 204
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 204
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_35
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 204
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_37
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_38
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: SpriteSheet_personagem_principal_39
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 120.25
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
