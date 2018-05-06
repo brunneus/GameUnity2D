@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed = 5;
     public float jumpForce = 1200;
+	private bool isGrounded = true;
 
     [Range(0,1)]
     public float sliding = .9f;
@@ -17,9 +18,7 @@ public class PlayerMovement : MonoBehaviour {
 
         var h = Input.GetAxis("Horizontal");
 
-        var grounded = IsGrounded();
-
-        if(Input.GetKeyDown(KeyCode.UpArrow) && grounded)
+		if(Input.GetKeyDown(KeyCode.UpArrow) && this.isGrounded)
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce);
         }
@@ -36,21 +35,29 @@ public class PlayerMovement : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = new Vector2(v.x * sliding, v.y);
         }
 
-        GetComponent<Animator>().SetFloat("speed", Mathf.Abs(h));
-        GetComponent<Animator>().SetBool("jumping", !grounded);
+		GetComponent<Animator>().SetBool("PlayerMoving", h != 0);
+		GetComponent<Animator>().SetBool("jumping", !this.isGrounded);
     }
 
-    private bool IsGrounded()
+	void FixedUpdate() {
+		UpdateIsGrounded ();
+	}
+
+    private void UpdateIsGrounded()
     {
         var bounds = GetComponent<Collider2D>().bounds;
 
+		Debug.Log (bounds);
+
         var range = bounds.size.y;
+
+		Debug.Log (range);
 
         var v = new Vector2(bounds.center.x, bounds.min.y - range);
 
         var hit = Physics2D.Linecast(v, bounds.center);
 
-        return hit.collider.gameObject != gameObject;
+		this.isGrounded = hit.collider.gameObject != gameObject;
     }
 		
 	void OnTriggerEnter2D(Collider2D other) {
