@@ -42,4 +42,21 @@ public class PlayerPlatformerController : PhysicsObject {
 
 		targetVelocity = move * maxSpeed;
 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.tag == "Enemy") {
+			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed);
+			GetComponent<Collider2D> ().enabled = false;
+
+			Debug.Log (jumpTakeOffSpeed);
+
+			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;
+
+			other.gameObject.GetComponent<InimigoBateVoltaScript> ().Dead ();
+
+		} else if (other.gameObject.tag == "Point") {
+			GameManagerScript.increaseScore ();
+			Destroy (other.gameObject);
+		}
+	}
 }
