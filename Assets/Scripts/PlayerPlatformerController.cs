@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPlatformerController : PhysicsObject {
 
@@ -9,6 +10,8 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	private SpriteRenderer spriteRenderer;
 	private Animator animator;
+
+	public string levelToLoad;
 
 	// Use this for initialization
 	void Awake () 
@@ -19,6 +22,12 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	protected override void ComputeVelocity()
 	{
+		if (transform.position.y < -10) {
+			Destroy (gameObject);
+
+			SceneManager.LoadScene(levelToLoad);
+		}
+
 		Vector2 move = Vector2.zero;
 
 		move.x = Input.GetAxis ("Horizontal");

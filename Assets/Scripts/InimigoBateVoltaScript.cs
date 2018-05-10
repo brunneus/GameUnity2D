@@ -22,7 +22,7 @@ public class InimigoBateVoltaScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag != "Stone" && other.gameObject.tag != "Enemy") {
+		if (other.gameObject.tag != "Stone" && other.gameObject.tag != "Enemy" && other.gameObject.tag != "Point") {
 			direction *= -1;
 		}
 	}
