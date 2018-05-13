@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Linq;
 
 public class PlayerPlatformerController : PhysicsObject {
 
@@ -11,6 +13,7 @@ public class PlayerPlatformerController : PhysicsObject {
 	private SpriteRenderer spriteRenderer;
 	private Animator animator;
 
+	public RawImage lifeDisplay;
 	public string levelToLoad;
 
 	// Use this for initialization
@@ -53,19 +56,44 @@ public class PlayerPlatformerController : PhysicsObject {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
+
 		if (other.gameObject.tag == "Enemy") {
-			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed);
-			GetComponent<Collider2D> ().enabled = false;
+			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
+			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
-			Debug.Log (jumpTakeOffSpeed);
+			StartCoroutine (this.executeEnemyHitEffectOnLifeDisplay ());
 
-			GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;
 
-			other.gameObject.GetComponent<InimigoBateVoltaScript> ().Dead ();
+			if (newSize.x <= 0) {
+				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;
+				GetComponent<Collider2D> ().enabled = false;
+				GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;
+
+				other.gameObject.GetComponent<InimigoBateVoltaScript> ().Dead ();
+			}
 
 		} else if (other.gameObject.tag == "Point") {
-			GameManagerScript.increaseScore ();
+
+			if (sizeDisplayLife.x < 160) {
+				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
+				this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
+				StartCoroutine (this.executeLifeHitEffectOnLifeDisplay ());
+			}
+
 			Destroy (other.gameObject);
 		}
+	}
+
+	private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
+		this.lifeDisplay.color = Color.white;
+		yield return new WaitForSeconds (.05f);
+		this.lifeDisplay.color = Color.red;
+	}
+
+	private IEnumerator executeLifeHitEffectOnLifeDisplay() {
+		this.lifeDisplay.color = Color.green;
+		yield return new WaitForSeconds (.05f);
+		this.lifeDisplay.color = Color.red;
 	}
 }
