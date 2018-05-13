@@ -75,6 +75,8 @@ public class PlayerPlatformerController : PhysicsObject {
 
 		} else if (other.gameObject.tag == "Point") {
 
+            GameManagerScript.increaseScore();
+
 			if (sizeDisplayLife.x < 160) {
 				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
 				this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
