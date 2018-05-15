@@ -18,6 +18,14 @@ public class GameManagerScript : MonoBehaviour {
 		
 	}
 
+	public static void resetScore() {
+		score = 0;
+	}
+
+	public static int getScore() {
+		return score;
+	}
+
 	public static void increaseScore() {
 		score++;
 		scoreText.text = "Pontuação: " + score;

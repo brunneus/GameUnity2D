@@ -6,16 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class EndGameManager : MonoBehaviour {
 
-    public Text score;
+    public Text scoreText;
 
     public void TryAgain()
     {
         SceneManager.LoadScene("MainMenu");
+		GameManagerScript.resetScore ();
     }
 
     // Use this for initialization
     void Start () {
-		
+		scoreText.text = GameManagerScript.getScore().ToString();
 	}
 
     // Update is called once per frame

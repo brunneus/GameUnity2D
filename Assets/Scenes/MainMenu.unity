@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa51ee98485c26c4d93233d65ffcbbe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: faseTest
+  levelToLoad: FirstSceneMission
 --- !u!1 &827121678
 GameObject:
   m_ObjectHideFlags: 0
