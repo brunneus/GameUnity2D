@@ -57,8 +57,9 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
-
+		Debug.Log ("pudim");
 		if (other.gameObject.tag == "Enemy") {
+			Debug.Log ("pao de batata");
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
@@ -66,6 +67,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 
 			if (newSize.x <= 0) {
+				Debug.Log ("tijolo");
 				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;
 				GetComponent<Collider2D> ().enabled = false;
 				GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;

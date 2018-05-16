@@ -16,7 +16,7 @@ public class EndGameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		scoreText.text = GameManagerScript.getScore().ToString();
+		scoreText.text = "Sua pontuação foi: " + GameManagerScript.getScore();
 	}
 
     // Update is called once per frame
