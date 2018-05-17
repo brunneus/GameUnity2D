@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f13ffc191a2cb24bb85554002024567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 817817149}
+  scoreText: {fileID: 817817149}
 --- !u!82 &657360453
 AudioSource:
   m_ObjectHideFlags: 0
