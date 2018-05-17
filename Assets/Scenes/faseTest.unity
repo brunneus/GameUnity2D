@@ -4384,16 +4384,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3a6b0fb394e19cf4ca1168432dc1169f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d1687eae61da0f849af1353fe073bd91, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -4424,7 +4424,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4492,6 +4492,8 @@ MonoBehaviour:
   jumpTakeOffSpeed: 15
   lifeDisplay: {fileID: 399638175}
   levelToLoad: EndGame
+  coinSound:
+  - {fileID: 8300000, guid: 85a450b9d07832d4a8002368e6917925, type: 3}
 --- !u!95 &1027409272
 Animator:
   serializedVersion: 3

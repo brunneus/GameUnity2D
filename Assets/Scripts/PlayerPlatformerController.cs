@@ -15,6 +15,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	public RawImage lifeDisplay;
 	public string levelToLoad;
+	public AudioClip[] coinSound;
 
 	// Use this for initialization
 	void Awake () 
@@ -75,6 +76,7 @@ public class PlayerPlatformerController : PhysicsObject {
 		} else if (other.gameObject.tag == "Point") {
 
             GameManagerScript.increaseScore();
+			PlaySound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
 				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
@@ -84,6 +86,11 @@ public class PlayerPlatformerController : PhysicsObject {
 
 			Destroy (other.gameObject);
 		}
+	}
+
+	void PlaySound(AudioClip audio) {
+		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+
 	}
 
 	private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
