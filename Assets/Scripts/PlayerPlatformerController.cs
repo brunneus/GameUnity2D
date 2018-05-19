@@ -16,6 +16,8 @@ public class PlayerPlatformerController : PhysicsObject {
 	public RawImage lifeDisplay;
 	public string levelToLoad;
 	public AudioClip[] coinSound;
+	public AudioClip[] jumpSound;
+	public AudioClip[] touchEnemySound;
 
 	// Use this for initialization
 	void Awake () 
@@ -46,6 +48,10 @@ public class PlayerPlatformerController : PhysicsObject {
 			}
 		}
 
+        if(Input.GetKeyDown(KeyCode.UpArrow)) {
+			PlayJumpSound (jumpSound [0]);
+        }
+ 
 		if (move.x != 0) {
 			transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
 		}
@@ -59,6 +65,8 @@ public class PlayerPlatformerController : PhysicsObject {
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
 		if (other.gameObject.tag == "Enemy") {
+			PlayTouchEnemySound (touchEnemySound [0]);
+            
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
@@ -76,7 +84,7 @@ public class PlayerPlatformerController : PhysicsObject {
 		} else if (other.gameObject.tag == "Point") {
 
             GameManagerScript.increaseScore();
-			PlaySound (coinSound [0]);
+			PlayCoinSound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
 				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
@@ -88,7 +96,17 @@ public class PlayerPlatformerController : PhysicsObject {
 		}
 	}
 
-	void PlaySound(AudioClip audio) {
+	void PlayCoinSound(AudioClip audio) {
+		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+
+	}
+
+    void PlayJumpSound(AudioClip audio) {
+		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+
+	}
+
+    void PlayTouchEnemySound(AudioClip audio) {
 		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
 
 	}
