@@ -9,9 +9,11 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	public float maxSpeed = 7;
 	public float jumpTakeOffSpeed = 7;
+	public GameObject visate;
 
 	private SpriteRenderer spriteRenderer;
 	private Animator animator;
+	private bool locked;
 
 	public RawImage lifeDisplay;
 	public string levelToLoad;
@@ -26,34 +28,34 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	protected override void ComputeVelocity()
 	{
-		if (transform.position.y < -10) {
-			Destroy (gameObject);
+		if (!locked) {
+			if (transform.position.y < -10) {
+				Destroy (gameObject);
 
-			SceneManager.LoadScene(levelToLoad);
-		}
-
-		Vector2 move = Vector2.zero;
-
-		move.x = Input.GetAxis ("Horizontal");
-
-		if (Input.GetButtonDown ("Vertical") && grounded) {
-			velocity.y = jumpTakeOffSpeed;
-		} 
-		else if (Input.GetButtonUp ("Jump")) 
-		{
-			if (velocity.y > 0) {
-				velocity.y = velocity.y * 0.5f;
+				SceneManager.LoadScene (levelToLoad);
 			}
+
+			Vector2 move = Vector2.zero;
+
+			move.x = Input.GetAxis ("Horizontal");
+
+			if (Input.GetButtonDown ("Vertical") && grounded) {
+				velocity.y = jumpTakeOffSpeed;
+			} else if (Input.GetButtonUp ("Jump")) {
+				if (velocity.y > 0) {
+					velocity.y = velocity.y * 0.5f;
+				}
+			}
+
+			if (move.x != 0) {
+				transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
+			}
+
+			animator.SetBool ("grounded", grounded);
+			animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
+
+			targetVelocity = move * maxSpeed;
 		}
-
-		if (move.x != 0) {
-			transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
-		}
-
-		animator.SetBool ("grounded", grounded);
-		animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
-
-		targetVelocity = move * maxSpeed;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
@@ -75,7 +77,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 		} else if (other.gameObject.tag == "Point") {
 
-            GameManagerScript.increaseScore();
+			GameManagerScript.increaseScore();
 			PlaySound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
@@ -85,6 +87,10 @@ public class PlayerPlatformerController : PhysicsObject {
 			}
 
 			Destroy (other.gameObject);
+		} else if (other.gameObject.tag == "Objective") {
+			locked = true;
+
+			visate.GetComponent<VisateScript> ().CatchMe (this.gameObject);
 		}
 	}
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    public GameObject player;      
-
+	public GameObject player;
+	public float endXPosition;
 
     private Vector3 offset;        
 
@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour {
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
-		if (player != null)
+		if (player != null && player.transform.position.x < endXPosition)
         transform.position = new Vector3(
             (player.transform.position + offset).x, 
             transform.position.y, 
