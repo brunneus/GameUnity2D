@@ -7,19 +7,19 @@ public class CameraController : MonoBehaviour {
 	public GameObject player;
 	public float endXPosition;
 
-    private Vector3 offset;        
+    private float offset;        
 
     void Start()
     {
-        offset = transform.position - player.transform.position;
+        offset = transform.position.x - 0.9f;
     }
 
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
-		if (player != null && player.transform.position.x < endXPosition)
+		if (player != null && !player.GetComponent<PlayerPlatformerController>().isLocked() && player.transform.position.x < endXPosition)
         transform.position = new Vector3(
-            (player.transform.position + offset).x, 
+			player.transform.position.x + offset, 
             transform.position.y, 
             transform.position.z);
     }

@@ -24,6 +24,8 @@ public class PlayerPlatformerController : PhysicsObject {
 	{
 		spriteRenderer = GetComponent<SpriteRenderer> ();   
 		animator = GetComponent<Animator> ();
+		locked = true;
+		visate.GetComponent<VisateScript> ().LetMe (this.gameObject);
 	}
 
 	protected override void ComputeVelocity()
@@ -96,7 +98,6 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void PlaySound(AudioClip audio) {
 		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
-
 	}
 
 	private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
@@ -109,5 +110,13 @@ public class PlayerPlatformerController : PhysicsObject {
 		this.lifeDisplay.color = Color.green;
 		yield return new WaitForSeconds (.05f);
 		this.lifeDisplay.color = Color.red;
+	}
+
+	public void unlock() {
+		locked = false;
+	}
+
+	public bool isLocked() {
+		return locked;
 	}
 }
