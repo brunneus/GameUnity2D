@@ -18,9 +18,10 @@ public class PlayerPlatformerController : PhysicsObject {
 	public AudioClip[] coinSound;
 	public AudioClip[] jumpSound;
 	public AudioClip[] touchEnemySound;
+    public AudioClip[] merdaSound;
 
-	// Use this for initialization
-	void Awake () 
+    // Use this for initialization
+    void Awake () 
 	{
 		spriteRenderer = GetComponent<SpriteRenderer> ();   
 		animator = GetComponent<Animator> ();
@@ -65,7 +66,7 @@ public class PlayerPlatformerController : PhysicsObject {
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
 		if (other.gameObject.tag == "Enemy") {
-			PlayTouchEnemySound (touchEnemySound [0]);
+			PlayMerdaSound (merdaSound [0]);
             
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
@@ -111,7 +112,13 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	}
 
-	private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
+    void PlayMerdaSound(AudioClip audio)
+    {
+        AudioSource.PlayClipAtPoint(audio, transform.position, 5);
+
+    }
+
+    private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.white;
 		yield return new WaitForSeconds (.05f);
 		this.lifeDisplay.color = Color.red;
