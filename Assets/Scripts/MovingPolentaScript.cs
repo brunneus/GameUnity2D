@@ -16,7 +16,7 @@ public class MovingPolentaScript : MonoBehaviour {
 	void Update () 
 	{
 		
-		if (transform.position.x <= begin || transform.position.x >= end) {
+		if (transform.localPosition.x <= begin || transform.localPosition.x >= end) {
 			speed *= -1;
 		}
 		transform.Translate (speed, 0, 0);
