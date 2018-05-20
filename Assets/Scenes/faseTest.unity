@@ -10712,6 +10712,10 @@ MonoBehaviour:
   levelToLoad: EndGame
   coinSound:
   - {fileID: 8300000, guid: 85a450b9d07832d4a8002368e6917925, type: 3}
+  jumpSound:
+  - {fileID: 8300000, guid: 28f2768da97dfce4b944ead7b74c5f5a, type: 3}
+  touchEnemySound:
+  - {fileID: 8300000, guid: e65a65febfe2ce4428322d6bc4614240, type: 3}
 --- !u!95 &1027409272
 Animator:
   serializedVersion: 3

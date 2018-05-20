@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: faseTest
-  secondsToWait: 1
+  secondsToWait: 3
 --- !u!4 &1763060725
 Transform:
   m_ObjectHideFlags: 0
