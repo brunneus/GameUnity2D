@@ -5,6 +5,7 @@ using System.Linq;
 
 public class PolentaScript : MonoBehaviour {
 	// Use this for initialization
+	public float fallOfSpeed = .5f;
 	void Start () {
 		
 	}
@@ -25,7 +26,7 @@ public class PolentaScript : MonoBehaviour {
 	}
 
 	private IEnumerator waitDelay() {
-		yield return new WaitForSeconds (.5f);
+		yield return new WaitForSeconds (this.fallOfSpeed);
 		this.gameObject.AddComponent<Rigidbody2D> ();
 		GetComponent<Collider2D>().enabled = false;
 	}

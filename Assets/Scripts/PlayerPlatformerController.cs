@@ -58,15 +58,16 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
-		if (other.gameObject.tag == "Enemy") {
+		Debug.Log (other.gameObject.tag);
+		if (other.gameObject.tag == "Enemy") {			
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
-
+				
 			StartCoroutine (this.executeEnemyHitEffectOnLifeDisplay ());
 
 
 			if (newSize.x <= 0) {
-				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;
+				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed);
 				GetComponent<Collider2D> ().enabled = false;
 				GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezePositionX;
 
@@ -75,7 +76,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 		} else if (other.gameObject.tag == "Point") {
 
-            GameManagerScript.increaseScore();
+			GameManagerScript.increaseScore ();
 			PlaySound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
