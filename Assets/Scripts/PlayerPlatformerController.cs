@@ -18,9 +18,12 @@ public class PlayerPlatformerController : PhysicsObject {
 	public RawImage lifeDisplay;
 	public string levelToLoad;
 	public AudioClip[] coinSound;
+	public AudioClip[] jumpSound;
+	public AudioClip[] touchEnemySound;
+    public AudioClip[] merdaSound;
 
-	// Use this for initialization
-	void Awake () 
+    // Use this for initialization
+    void Awake () 
 	{
 		spriteRenderer = GetComponent<SpriteRenderer> ();   
 		animator = GetComponent<Animator> ();
@@ -48,11 +51,14 @@ public class PlayerPlatformerController : PhysicsObject {
 					velocity.y = velocity.y * 0.5f;
 				}
 			}
-
-			if (move.x != 0) {
-				transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
-			}
-
+				
+        if(Input.GetKeyDown(KeyCode.UpArrow)) {
+			PlayJumpSound (jumpSound [0]);
+        }
+ 
+		if (move.x != 0) {
+			transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
+		}
 			animator.SetBool ("grounded", grounded);
 			animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
 
@@ -63,6 +69,8 @@ public class PlayerPlatformerController : PhysicsObject {
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
 		if (other.gameObject.tag == "Enemy") {
+			PlayMerdaSound (merdaSound [0]);
+            
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
@@ -78,9 +86,8 @@ public class PlayerPlatformerController : PhysicsObject {
 			}
 
 		} else if (other.gameObject.tag == "Point") {
-
-			GameManagerScript.increaseScore();
-			PlaySound (coinSound [0]);
+            GameManagerScript.increaseScore();
+			PlayCoinSound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
 				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
@@ -96,11 +103,24 @@ public class PlayerPlatformerController : PhysicsObject {
 		}
 	}
 
-	void PlaySound(AudioClip audio) {
+	void PlayCoinSound(AudioClip audio) {
 		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
 	}
 
-	private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
+    void PlayJumpSound(AudioClip audio) {
+		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+	}
+
+    void PlayTouchEnemySound(AudioClip audio) {
+		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+	}
+
+    void PlayMerdaSound(AudioClip audio)
+    {
+        AudioSource.PlayClipAtPoint(audio, transform.position, 5);
+    }
+
+    private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.white;
 		yield return new WaitForSeconds (.05f);
 		this.lifeDisplay.color = Color.red;
