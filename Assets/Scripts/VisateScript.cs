@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VisateScript : MonoBehaviour {
 	public GameObject passenger;
@@ -8,6 +9,7 @@ public class VisateScript : MonoBehaviour {
 	public float timeToWaitBus;
 	private float startNenoPosition;
 	private float lastNenoPosition;
+	public string lastScene;
 
 	private GameObject player;
 	private bool firstStep, secondStep;
@@ -51,7 +53,7 @@ public class VisateScript : MonoBehaviour {
 			} else {
 				updatePosition (transform.position.x + 20);
 				if (transform.position.x > (lastNenoPosition + 10)) {
-					Debug.Log ("Coloque a proxima cena aqui!!");
+					SceneManager.LoadScene (lastScene);
 				}
 			}
 		}
