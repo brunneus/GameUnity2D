@@ -33,6 +33,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	protected override void ComputeVelocity()
 	{
+		
 		if (!locked) {
 			if (transform.position.y < -10) {
 				Destroy (gameObject);
@@ -44,25 +45,26 @@ public class PlayerPlatformerController : PhysicsObject {
 
 			move.x = Input.GetAxis ("Horizontal");
 
-			if (Input.GetButtonDown ("Vertical") && grounded) {
+			if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
 				velocity.y = jumpTakeOffSpeed;
+				PlayJumpSound (jumpSound [0]);
 			} else if (Input.GetButtonUp ("Jump")) {
 				if (velocity.y > 0) {
 					velocity.y = velocity.y * 0.5f;
 				}
 			}
-				
-        if(Input.GetKeyDown(KeyCode.UpArrow)) {
-			PlayJumpSound (jumpSound [0]);
-        }
+
  
-		if (move.x != 0) {
-			transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
-		}
+			if (move.x != 0) {
+				transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
+			}
+
 			animator.SetBool ("grounded", grounded);
 			animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
 
 			targetVelocity = move * maxSpeed;
+		} else {
+			animator.SetBool ("grounded", true);
 		}
 	}
 
