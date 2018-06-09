@@ -302,7 +302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 9.1, y: -0.000005722}
-  m_SizeDelta: {x: 521.3, y: 483.52}
+  m_SizeDelta: {x: 700, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114502112
 MonoBehaviour:
@@ -323,7 +323,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e298c4896780fa6488dccfeb29d9ae70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0e9b67cd75284a4f9717616bb1c33f9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -378,7 +378,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 1, b: 0.6039216, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.49803922, b: 0.15294118, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -445,8 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117b6f4ec7f436d47a9ff8647865b1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: AlertScene
-  secondsToWait: 3
+  levelToLoad: faseTest
+  secondsToWait: 5
 --- !u!4 &1763060725
 Transform:
   m_ObjectHideFlags: 0
