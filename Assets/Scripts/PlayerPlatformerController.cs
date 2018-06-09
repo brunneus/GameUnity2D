@@ -15,6 +15,10 @@ public class PlayerPlatformerController : PhysicsObject {
 	private Animator animator;
 	private bool locked;
 
+	public Color goodWealthyColor;
+	public Color mediumWealthyColor;
+	public Color badWealthyColor;
+
 	public RawImage lifeDisplay;
 	public string levelToLoad;
 	public AudioClip[] coinSound;
@@ -70,6 +74,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
+
 		if (other.gameObject.tag == "Enemy") {
 			PlayMerdaSound (merdaSound [0]);
             
@@ -77,7 +82,6 @@ public class PlayerPlatformerController : PhysicsObject {
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
 			StartCoroutine (this.executeEnemyHitEffectOnLifeDisplay ());
-
 
 			if (newSize.x <= 0) {
 				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;
@@ -103,6 +107,24 @@ public class PlayerPlatformerController : PhysicsObject {
 
 			visate.GetComponent<VisateScript> ().CatchMe (this.gameObject);
 		}
+
+		UpdateDisplayLifeColor ();
+	}
+
+	void UpdateDisplayLifeColor() {
+		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
+	
+		if (sizeDisplayLife.x <= 48) {
+			this.lifeDisplay.color = this.badWealthyColor;
+		} 
+
+		if (sizeDisplayLife.x > 48 && sizeDisplayLife.x <= 112) {
+			this.lifeDisplay.color = this.mediumWealthyColor;
+		}
+
+		if (sizeDisplayLife.x > 112) {
+			this.lifeDisplay.color = this.goodWealthyColor;
+		}
 	}
 
 	void PlayCoinSound(AudioClip audio) {
@@ -125,13 +147,13 @@ public class PlayerPlatformerController : PhysicsObject {
     private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.white;
 		yield return new WaitForSeconds (.05f);
-		this.lifeDisplay.color = Color.red;
+		this.UpdateDisplayLifeColor ();
 	}
 
 	private IEnumerator executeLifeHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.green;
 		yield return new WaitForSeconds (.05f);
-		this.lifeDisplay.color = Color.red;
+		this.UpdateDisplayLifeColor ();
 	}
 
 	public void unlock() {
