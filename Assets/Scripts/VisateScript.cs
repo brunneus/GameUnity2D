@@ -31,7 +31,7 @@ public class VisateScript : MonoBehaviour {
 				}
 			} else {
 				if (player.transform.position.x > transform.position.x) {
-					updatePosition (player.transform.position.x + 15);
+					updatePosition (player.transform.position.x + 10);
 				} else {
 					StartCoroutine (returnDriving ());
 				}
@@ -51,7 +51,7 @@ public class VisateScript : MonoBehaviour {
 					player.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeRotation;
 				}
 			} else {
-				updatePosition (transform.position.x + 20);
+				updatePosition (transform.position.x + 15);
 				if (transform.position.x > (lastNenoPosition + 10)) {
 					SceneManager.LoadScene (lastScene);
 				}

@@ -17771,9 +17771,10 @@ MonoBehaviour:
   maxSpeed: 7
   jumpTakeOffSpeed: 14.5
   visate: {fileID: 2145877331}
+  sceneStartingIn: -4
   goodWealthyColor: {r: 0.05882353, g: 1, b: 0, a: 1}
   mediumWealthyColor: {r: 1, g: 0.472, b: 0, a: 1}
-  badWealthyColor: {r: 1, g: 0, b: 0, a: 0}
+  badWealthyColor: {r: 1, g: 0, b: 0, a: 1}
   lifeDisplay: {fileID: 399638175}
   levelToLoad: EndGame
   coinSound:
@@ -17783,7 +17784,21 @@ MonoBehaviour:
   touchEnemySound:
   - {fileID: 8300000, guid: e65a65febfe2ce4428322d6bc4614240, type: 3}
   merdaSound:
+  - {fileID: 8300000, guid: 4b5c42547e442404490508aa4e92c4d2, type: 3}
+  - {fileID: 8300000, guid: 43df80831cc004d4ab89e72717f93fd8, type: 3}
+  - {fileID: 8300000, guid: 1395099d0248cbc489e6cabe248f8a16, type: 3}
+  - {fileID: 8300000, guid: db69dcf18ee2e524b950d4b7eccda444, type: 3}
+  - {fileID: 8300000, guid: b0f319c2e98d2c94d83248093b7ec3ce, type: 3}
+  - {fileID: 8300000, guid: 11b94e72e7d434249977aa9c062b23b2, type: 3}
+  - {fileID: 8300000, guid: 991f921c04a1e7c43ad3428825cfd30e, type: 3}
+  - {fileID: 8300000, guid: 736e81b9a1b7dbb4fb48cddef0496fbe, type: 3}
   - {fileID: 8300000, guid: 30889a927952ff14bababe55c5709c05, type: 3}
+  - {fileID: 8300000, guid: a1f37b942317aa04d9a69230f723b3bd, type: 3}
+  - {fileID: 8300000, guid: 058a6beabbe3e4b478b6f04bbe3fa1d1, type: 3}
+  - {fileID: 8300000, guid: 2b376db3a4847d84e9fe0474b32a2821, type: 3}
+  - {fileID: 8300000, guid: 862978476c0414a4bbe8f467dc6a8881, type: 3}
+  - {fileID: 8300000, guid: 8bbb1b709c2d0eb47b6f11231fca214a, type: 3}
+  - {fileID: 8300000, guid: 9930b576d2b8deb45bc00713fab05b50, type: 3}
 --- !u!95 &1027409272
 Animator:
   serializedVersion: 3
@@ -37958,7 +37973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passenger: {fileID: 2000965844}
-  speed: 0.2
+  speed: 0.3
   timeToWaitBus: 3
   lastScene: EndScene
 --- !u!212 &2145877333

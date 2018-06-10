@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117b6f4ec7f436d47a9ff8647865b1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: AlertScene
+  levelToLoad: faseTest
   secondsToWait: 3
 --- !u!4 &1763060725
 Transform:

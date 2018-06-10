@@ -10,10 +10,12 @@ public class PlayerPlatformerController : PhysicsObject {
 	public float maxSpeed = 7;
 	public float jumpTakeOffSpeed = 7;
 	public GameObject visate;
+	public int sceneStartingIn;
 
 	private SpriteRenderer spriteRenderer;
 	private Animator animator;
 	private bool locked;
+	private bool playingSound;
 
 	public Color goodWealthyColor;
 	public Color mediumWealthyColor;
@@ -36,8 +38,7 @@ public class PlayerPlatformerController : PhysicsObject {
 	}
 
 	protected override void ComputeVelocity()
-	{
-		
+	{		
 		if (!locked) {
 			if (transform.position.y < -10) {
 				Destroy (gameObject);
@@ -47,26 +48,27 @@ public class PlayerPlatformerController : PhysicsObject {
 
 			Vector2 move = Vector2.zero;
 
-			move.x = Input.GetAxis ("Horizontal");
+			if (transform.position.x > sceneStartingIn || !(Input.GetAxis ("Horizontal") < 0)) {
+				move.x = Input.GetAxis ("Horizontal");
 
-			if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
-				velocity.y = jumpTakeOffSpeed;
-				PlayJumpSound (jumpSound [0]);
-			} else if (Input.GetButtonUp ("Jump")) {
-				if (velocity.y > 0) {
-					velocity.y = velocity.y * 0.5f;
+				if (Input.GetKeyDown (KeyCode.UpArrow) && grounded) {
+					velocity.y = jumpTakeOffSpeed;
+					PlaySound (jumpSound [0]);
+				} else if (Input.GetButtonUp ("Jump")) {
+					if (velocity.y > 0) {
+						velocity.y = velocity.y * 0.5f;
+					}
 				}
+
+				if (move.x != 0) {
+					transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
+				}
+
+				animator.SetBool ("grounded", grounded);
+				animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
+
+				targetVelocity = move * maxSpeed;
 			}
-
- 
-			if (move.x != 0) {
-				transform.localScale = new Vector2 (Mathf.Sign (move.x), transform.localScale.y);
-			}
-
-			animator.SetBool ("grounded", grounded);
-			animator.SetBool ("PlayerMoving", (Mathf.Abs (velocity.x) / maxSpeed) > 0);
-
-			targetVelocity = move * maxSpeed;
 		} else {
 			animator.SetBool ("grounded", true);
 		}
@@ -74,9 +76,10 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
+		Debug.Log (sizeDisplayLife.x);
 
 		if (other.gameObject.tag == "Enemy") {
-			PlayMerdaSound (merdaSound [0]);
+			PlayMerdaSound (merdaSound [Random.Range (0, 14)]);
             
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
@@ -93,7 +96,7 @@ public class PlayerPlatformerController : PhysicsObject {
 
 		} else if (other.gameObject.tag == "Point") {
             GameManagerScript.increaseScore();
-			PlayCoinSound (coinSound [0]);
+			PlaySound (coinSound [0]);
 
 			if (sizeDisplayLife.x < 160) {
 				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
@@ -126,24 +129,20 @@ public class PlayerPlatformerController : PhysicsObject {
 			this.lifeDisplay.color = this.goodWealthyColor;
 		}
 	}
-
-	void PlayCoinSound(AudioClip audio) {
+		
+	void PlaySound(AudioClip audio) {
 		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
 	}
 
-    void PlayJumpSound(AudioClip audio) {
-		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
-	}
-
-    void PlayTouchEnemySound(AudioClip audio) {
-		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
-	}
-
-    void PlayMerdaSound(AudioClip audio)
+	void PlayMerdaSound(AudioClip audio)
     {
-        AudioSource.PlayClipAtPoint(audio, transform.position, 5);
+		if (!playingSound) {
+			playingSound = true;
+			AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+			playingSound = false;
+		}
     }
-
+		
     private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.white;
 		yield return new WaitForSeconds (.05f);

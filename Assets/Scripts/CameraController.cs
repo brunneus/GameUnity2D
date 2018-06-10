@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour {
     // LateUpdate is called after Update each frame
     void LateUpdate()
     {
-		if (player != null && !player.GetComponent<PlayerPlatformerController>().isLocked() && player.transform.position.x < endXPosition)
+		if (player != null && !player.GetComponent<PlayerPlatformerController>().isLocked() && player.transform.position.x < endXPosition && player.transform.position.x > 0.14)
         transform.position = new Vector3(
 			player.transform.position.x + offset, 
             transform.position.y, 
