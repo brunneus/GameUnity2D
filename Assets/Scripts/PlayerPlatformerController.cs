@@ -76,7 +76,6 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
-		Debug.Log (sizeDisplayLife.x);
 
 		if (other.gameObject.tag == "Enemy") {
 			PlayMerdaSound (merdaSound [Random.Range (0, 14)]);

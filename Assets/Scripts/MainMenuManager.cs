@@ -1,39 +1,67 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
 
     public string levelToLoad;
+    public Button newGameButton;
+    public Button quitGameButton;
+    private static Button newGameButtons;
+    private static Button quitGameButtons;
 
-	public void NewGame() {
+    private static AudioSource soundWithVoice;
+    private static AudioSource singleSound;
+    private static bool started;
+
+    private static MainMenuManager instance = null;
+
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            soundWithVoice.enabled = true;
+            singleSound.enabled = false;
+            newGameButtons.onClick.AddListener(NewGame);
+            quitGameButtons.onClick.AddListener(QuitGame);
+
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            newGameButtons = newGameButton;
+            quitGameButtons = quitGameButton;
+            newGameButtons.onClick.AddListener(NewGame);
+            quitGameButtons.onClick.AddListener(QuitGame);
+
+            AudioSource[] sounds = GetComponents<AudioSource>();
+            soundWithVoice = sounds[0];
+            singleSound = sounds[1];
+            DontDestroyOnLoad(this.gameObject);
+
+            soundWithVoice.enabled = true;
+            singleSound.enabled = false;
+            
+            instance = this;
+        }
+    }
+
+    public void NewGame() {
         SceneManager.LoadScene(levelToLoad);
+
+        soundWithVoice.enabled = false;
+        StartCoroutine(PlayGameSound());
     }
 
     public void QuitGame() {
         Application.Quit(); 
     }
 
-}
-
-public class MyUnitySingleton : MonoBehaviour
-{
-
-    private static MyUnitySingleton instance = null;
-    public static MyUnitySingleton Instance
+    private IEnumerator PlayGameSound()
     {
-        get { return instance; }
+        yield return new WaitForSeconds(5);
+        singleSound.enabled = true;
     }
-    void Awake()
-    {
-        if (instance != null && instance != this) {
-            Destroy(this.gameObject);
-            return;
-        } else {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
-
 }
