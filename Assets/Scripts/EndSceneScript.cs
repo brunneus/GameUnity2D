@@ -11,7 +11,7 @@ public class EndSceneScript : MonoBehaviour {
     void Start () {
         AudioSource.PlayClipAtPoint(audio, transform.position, 10);
 
-		StartCoroutine(callNextScene());
+		if (levelToLoad != null) StartCoroutine(callNextScene());
     }
 
 	private IEnumerator callNextScene() {
