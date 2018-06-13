@@ -26729,7 +26729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o: 0"
+  m_Text: "Pontua\xE7\xE3o: 00"
 --- !u!222 &1553321904
 CanvasRenderer:
   m_ObjectHideFlags: 0
