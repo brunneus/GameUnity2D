@@ -323,7 +323,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: d0e9b67cd75284a4f9717616bb1c33f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3a6895d27d71c4f4b8f6484ab4cb08ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: FirstSceneMission
-  secondsToWait: 6
+  secondsToWait: 7
 --- !u!4 &1763060725
 Transform:
   m_ObjectHideFlags: 0
