@@ -23655,9 +23655,9 @@ Transform:
   - {fileID: 1871025522}
   - {fileID: 164288629}
   - {fileID: 1962125888}
-  - {fileID: 1307207278}
   - {fileID: 849836175}
   - {fileID: 1199722435}
+  - {fileID: 1307207278}
   - {fileID: 295974114}
   - {fileID: 2145097720}
   - {fileID: 763249324}
@@ -25163,7 +25163,7 @@ MonoBehaviour:
   passenger: {fileID: 1761478847}
   speed: 0.3
   timeToWaitBus: 3
-  lastScene: EndScene
+  lastScene: EndScene 1
 --- !u!212 &2145877333
 SpriteRenderer:
   m_ObjectHideFlags: 0
