@@ -106,6 +106,7 @@ public class PlayerPlatformerController : PhysicsObject {
 			Destroy (other.gameObject);
 		} else if (other.gameObject.tag == "Objective") {
 			locked = true;
+			Debug.Log (other.gameObject.tag);
 
 			visate.GetComponent<VisateScript> ().CatchMe (this.gameObject);
 		}

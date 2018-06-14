@@ -24,11 +24,23 @@ EditorBuildSettings:
     path: Assets/Scenes/EndScene 1.unity
     guid: 895fc1759cb268644a27101f56709ed5
   - enabled: 1
+    path: Assets/Scenes/Fase_Julio_noite.unity
+    guid: 779dc6ed7342c3041af8202c4ef27b6c
+  - enabled: 1
+    path: Assets/Scenes/BeginScene2.unity
+    guid: c0aad4b6a89522941b2aee17e4b638b1
+  - enabled: 1
+    path: Assets/Scenes/EndScene2.unity
+    guid: 7483622b372e6b548bf294a621c3987f
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 144d7e2592bc28c438c8f7278fdaf562
   - enabled: 1
     path: Assets/Scenes/SecondSceneMission.unity
     guid: 965792643005ff045940d99feb3ca02c
+  - enabled: 1
+    path: Assets/Scenes/EndSceneCaxiasDoSal.unity
+    guid: 6a1ed3e2c864e074aadec886f7679179
   - enabled: 1
     path: Assets/Scenes/Fase_2_CaxiasDoSal.unity
     guid: 28ec927facc36334d9bbddcd35807c0a
