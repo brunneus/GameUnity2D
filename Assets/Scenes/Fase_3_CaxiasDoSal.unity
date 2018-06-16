@@ -11539,7 +11539,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027409270}
   m_LocalRotation: {x: 0, y: 0, z: -0.008726465, w: 0.999962}
-  m_LocalPosition: {x: 0.9, y: 0.48, z: 0}
+  m_LocalPosition: {x: 0.9, y: 0.4051713, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21522,6 +21522,7 @@ GameObject:
   - component: {fileID: 1761478851}
   - component: {fileID: 1761478848}
   - component: {fileID: 1761478849}
+  - component: {fileID: 1761478850}
   m_Layer: 0
   m_Name: Havaiana
   m_TagString: Objective
@@ -21574,6 +21575,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.94, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &1761478850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761478847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd623c9eab1a3a48806609f5048b532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move: 1
+  MoveVector: {x: 0, y: 1, z: 0}
+  MoveRange: 0.2
+  MoveSpeed: 2
 --- !u!212 &1761478851
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21607,7 +21623,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1d002607c9b688644b3c68b1672f14f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21625,7 +21641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761478847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 225.86, y: 0.98, z: 0}
+  m_LocalPosition: {x: 225.73, y: 0.74, z: 0}
   m_LocalScale: {x: 0.35889244, y: 0.35889244, z: 0.35889244}
   m_Children: []
   m_Father: {fileID: 0}
