@@ -19958,7 +19958,7 @@ MonoBehaviour:
   jumpSound:
   - {fileID: 8300000, guid: 28f2768da97dfce4b944ead7b74c5f5a, type: 3}
   touchEnemySound:
-  - {fileID: 8300000, guid: e65a65febfe2ce4428322d6bc4614240, type: 3}
+  - {fileID: 0}
   merdaSound:
   - {fileID: 8300000, guid: 4b5c42547e442404490508aa4e92c4d2, type: 3}
   - {fileID: 8300000, guid: 43df80831cc004d4ab89e72717f93fd8, type: 3}
@@ -30121,7 +30121,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o: 0"
+  m_Text: 'Bergas: 0'
 --- !u!222 &1553321904
 CanvasRenderer:
   m_ObjectHideFlags: 0

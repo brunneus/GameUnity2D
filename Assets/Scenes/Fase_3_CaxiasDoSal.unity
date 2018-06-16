@@ -2874,8 +2874,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 273921562}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 143.85, y: -2.16, z: 0.59375}
-  m_LocalScale: {x: 0.35806397, y: 0.35806397, z: 0.35806397}
+  m_LocalPosition: {x: 145.18, y: -2.85, z: 0.59375}
+  m_LocalScale: {x: 0.23810117, y: 0.23810117, z: 0.23810117}
   m_Children: []
   m_Father: {fileID: 1757990717}
   m_RootOrder: 1
@@ -11454,7 +11454,7 @@ MonoBehaviour:
   jumpSound:
   - {fileID: 8300000, guid: 28f2768da97dfce4b944ead7b74c5f5a, type: 3}
   touchEnemySound:
-  - {fileID: 8300000, guid: e65a65febfe2ce4428322d6bc4614240, type: 3}
+  - {fileID: 0}
   merdaSound:
   - {fileID: 8300000, guid: 4b5c42547e442404490508aa4e92c4d2, type: 3}
   - {fileID: 8300000, guid: 43df80831cc004d4ab89e72717f93fd8, type: 3}
@@ -18131,7 +18131,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o: 0"
+  m_Text: 'Bergas: 0'
 --- !u!222 &1553321904
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20648,8 +20648,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1724844234}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 87.97, y: -1.74, z: -0.020549241}
-  m_LocalScale: {x: 0.36273035, y: 0.36273035, z: 0.36273035}
+  m_LocalPosition: {x: 89.368, y: -2.12, z: -0.021}
+  m_LocalScale: {x: 0.17657772, y: 0.17657772, z: 0.17657772}
   m_Children: []
   m_Father: {fileID: 62662589}
   m_RootOrder: 12
@@ -21625,8 +21625,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761478847}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 224.447, y: 1.718, z: 0}
-  m_LocalScale: {x: 0.30949795, y: 0.30949795, z: 0.30949795}
+  m_LocalPosition: {x: 225.86, y: 0.98, z: 0}
+  m_LocalScale: {x: 0.35889244, y: 0.35889244, z: 0.35889244}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

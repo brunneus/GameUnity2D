@@ -16,7 +16,10 @@ public class EndGameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		scoreText.text = "Sua pontuação foi: " + GameManagerScript.getScore();
+        if(GameManagerScript.getScore() <= 1) 
+		    scoreText.text = "Você coletou " + GameManagerScript.getScore() + " berga! :(";
+        else
+		    scoreText.text = "Você coletou " + GameManagerScript.getScore() + " bergas!";
 	}
 
     // Update is called once per frame
