@@ -26729,7 +26729,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Pontua\xE7\xE3o: 00"
+  m_Text: "Pontua\xE7\xE3o: 0"
 --- !u!222 &1553321904
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37894,7 +37894,7 @@ MonoBehaviour:
   passenger: {fileID: 2000965844}
   speed: 0.3
   timeToWaitBus: 3
-  lastScene: EndScene
+  lastScene: EndSceneJulio
 --- !u!212 &2145877333
 SpriteRenderer:
   m_ObjectHideFlags: 0

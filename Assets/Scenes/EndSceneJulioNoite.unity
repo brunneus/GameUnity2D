@@ -245,7 +245,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6fe13dbc4db6ddd46ac82fe507bb6727, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 706474d82692fcf408b0124dccb76b5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -280,4 +280,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 8300000, guid: 2ff3401c93293d048a0a556bc66713de, type: 3}
-  levelToLoad: BeginScene2
+  levelToLoad: CaxiasDoSalMission
