@@ -12,7 +12,7 @@ public class Box : MonoBehaviour {
     {
 		var normal = coll.contacts [0].normal;
 
-		if (normal.y !=0) {
+		if (normal.x == 0) {
 			return;
 		}
 
