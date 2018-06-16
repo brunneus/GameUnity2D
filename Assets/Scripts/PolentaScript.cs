@@ -17,10 +17,10 @@ public class PolentaScript : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D other) {
-		var coliders = other.contacts.Select (c => c.normal);
+	void OnCollisionEnter2D(Collision2D coll) {
+		var normal = coll.contacts [0].normal;
 
-		if (coliders.Any (c => c == -Vector2.up)) {		
+		if (normal == -Vector2.up) {		
 			StartCoroutine (waitDelay ());
 		}
 	}

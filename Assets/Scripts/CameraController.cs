@@ -28,7 +28,5 @@ public class CameraController : MonoBehaviour {
 			player.transform.position.x + offset, 
 			cameraY, 
             transform.position.z);
-		
-		Debug.Log (Time.deltaTime);
     }
 }
