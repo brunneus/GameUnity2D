@@ -15158,7 +15158,7 @@ Transform:
   - {fileID: 89266181}
   - {fileID: 1301819355}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &907703313
 Prefab:
@@ -22523,7 +22523,7 @@ Transform:
   - {fileID: 1073929686}
   - {fileID: 1394140474}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1323226132 stripped
 Transform:
@@ -29943,7 +29943,7 @@ Transform:
   - {fileID: 1314986195}
   - {fileID: 1303205847}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744654742
 Prefab:
@@ -31913,7 +31913,7 @@ Transform:
   - {fileID: 897392350}
   - {fileID: 1959175266}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1830373565
 Prefab:
@@ -37613,34 +37613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallOfSpeed: 0.3
---- !u!1 &2133316454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 2133316455}
-  m_Layer: 0
-  m_Name: Ruas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2133316455
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2133316454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 55.892494, y: -0.96599996, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2134002437
 Prefab:
   m_ObjectHideFlags: 0
