@@ -138,14 +138,14 @@ public class PlayerPlatformerController : PhysicsObject {
 	}
 		
 	void PlaySound(AudioClip audio) {
-		AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+		AudioSource.PlayClipAtPoint (audio, transform.position, 15);
 	}
 
 	void PlayMerdaSound(AudioClip audio)
     {
 		if (!playingSound) {
 			playingSound = true;
-			AudioSource.PlayClipAtPoint (audio, transform.position, 5);
+			AudioSource.PlayClipAtPoint (audio, transform.position, 15);
 			playingSound = false;
 		}
     }

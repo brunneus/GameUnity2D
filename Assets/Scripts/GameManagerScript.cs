@@ -29,6 +29,6 @@ public class GameManagerScript : MonoBehaviour {
 
 	public static void increaseScore() {
 		score++;
-		scoreText.text = "Pontuação: " + score;
+		scoreText.text = "Bergas: " + score;
 	}
 }
