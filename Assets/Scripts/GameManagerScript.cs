@@ -12,6 +12,7 @@ public class GameManagerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreText = publicScoreText;
+		updateScoreText ();
 	}
 	
 	// Update is called once per frame
@@ -29,6 +30,10 @@ public class GameManagerScript : MonoBehaviour {
 
 	public static void increaseScore() {
 		score++;
+		updateScoreText ();
+	}
+
+	private static void updateScoreText() {
 		scoreText.text = "Bergas: " + score;
 	}
 }

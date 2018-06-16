@@ -24,5 +24,6 @@ public class EndGameManager : MonoBehaviour {
 
 	public void RepeatLevel() {
 		SceneManager.LoadScene (GameManagerScript.lastSceneName);
+		GameManagerScript.resetScore ();
 	}
 }
