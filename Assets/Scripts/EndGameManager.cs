@@ -19,8 +19,7 @@ public class EndGameManager : MonoBehaviour {
 		scoreText.text = "Sua pontuação foi: " + GameManagerScript.getScore();
 	}
 
-    // Update is called once per frame
-    void Update () {
-		
+	public void RepeatLevel() {
+		SceneManager.LoadScene (GameManagerScript.lastSceneName);
 	}
 }

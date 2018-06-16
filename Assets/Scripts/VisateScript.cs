@@ -100,11 +100,11 @@ public class VisateScript : MonoBehaviour {
 		if (player != null && !startingLevel ()) {
 			lastNenoPosition = player.transform.position.x;
 			Destroy (player.gameObject);
-			Destroy (passenger.gameObject);
+			if (passenger != null) Destroy (passenger.gameObject);
 		}
 	}
 
 	private bool startingLevel() {
-		return player != null && player.transform.position.x < (passenger.transform.position.x - 20);
+		return player != null && player.transform.position.x < (passenger != null ? passenger.transform.position.x - 20 : 200);
 	}
 }

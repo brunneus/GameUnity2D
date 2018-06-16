@@ -7,6 +7,7 @@ public class GameManagerScript : MonoBehaviour {
 	private static int score = 0;
 	private static Text scoreText;
 	public Text publicScoreText;
+	public static string lastSceneName;
 
 	// Use this for initialization
 	void Start () {

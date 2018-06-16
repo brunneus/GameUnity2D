@@ -49,6 +49,7 @@ public class MainMenuManager : MonoBehaviour {
     }
 
     public void NewGame() {
+		GameManagerScript.lastSceneName = levelToLoad;
         SceneManager.LoadScene(levelToLoad);
 
         soundWithVoice.enabled = false;

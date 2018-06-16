@@ -9,6 +9,7 @@ public class EndSceneScript : MonoBehaviour {
 	public string levelToLoad;
     
     void Start () {
+		GameManagerScript.lastSceneName = levelToLoad;
         AudioSource.PlayClipAtPoint(audio, transform.position, 10);
 
 		if (levelToLoad != null) StartCoroutine(callNextScene());

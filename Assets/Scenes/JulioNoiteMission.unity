@@ -276,8 +276,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1591345071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a9fa2bafc4acd4092bfbdd71dd5e37, type: 3}
+  m_Script: {fileID: 11500000, guid: 117b6f4ec7f436d47a9ff8647865b1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 8300000, guid: 2ff3401c93293d048a0a556bc66713de, type: 3}
   levelToLoad: Fase_2_JulioNoite
+  secondsToWait: 3
