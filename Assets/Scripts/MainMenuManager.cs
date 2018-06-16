@@ -7,9 +7,11 @@ public class MainMenuManager : MonoBehaviour {
 
     public string levelToLoad;
     public Button newGameButton;
-    public Button quitGameButton;
+	public Button quitGameButton;
+	public Button helpButton;
     private static Button newGameButtons;
-    private static Button quitGameButtons;
+	private static Button quitGameButtons;
+	private static Button helpButtons;
 
     private static AudioSource soundWithVoice;
     private static AudioSource singleSound;
@@ -24,7 +26,8 @@ public class MainMenuManager : MonoBehaviour {
             soundWithVoice.enabled = true;
             singleSound.enabled = false;
             newGameButtons.onClick.AddListener(NewGame);
-            quitGameButtons.onClick.AddListener(QuitGame);
+			quitGameButtons.onClick.AddListener(QuitGame);
+			helpButtons.onClick.AddListener(CallHelpScene);
 
             Destroy(this.gameObject);
             return;
@@ -33,8 +36,10 @@ public class MainMenuManager : MonoBehaviour {
         {
             newGameButtons = newGameButton;
             quitGameButtons = quitGameButton;
+			helpButtons = helpButton;
             newGameButtons.onClick.AddListener(NewGame);
-            quitGameButtons.onClick.AddListener(QuitGame);
+			quitGameButtons.onClick.AddListener(QuitGame);
+			helpButtons.onClick.AddListener(CallHelpScene);
 
             AudioSource[] sounds = GetComponents<AudioSource>();
             soundWithVoice = sounds[0];
@@ -59,6 +64,10 @@ public class MainMenuManager : MonoBehaviour {
     public void QuitGame() {
         Application.Quit(); 
     }
+
+	public void CallHelpScene() {
+		SceneManager.LoadScene ("AlertScene");
+	}
 
     private IEnumerator PlayGameSound()
     {
