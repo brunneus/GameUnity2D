@@ -16,6 +16,8 @@ public class PlayerPlatformerController : PhysicsObject {
 	private Animator animator;
 	private bool locked;
 	private bool playingSound;
+	private bool canTakeDamage = true;
+	private bool canMakeDamageEffects = true;
 
 	public Color goodWealthyColor;
 	public Color mediumWealthyColor;
@@ -39,6 +41,10 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	protected override void ComputeVelocity()
 	{		
+		if (this.canMakeDamageEffects && !canTakeDamage) {
+			StartCoroutine (this.makeDamageEffect ());
+		}
+
 		if (!locked) {
 			if (transform.position.y < -10) {
 				Destroy (gameObject);
@@ -77,13 +83,14 @@ public class PlayerPlatformerController : PhysicsObject {
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
 
-		if (other.gameObject.tag == "Enemy") {
+		if (other.gameObject.tag == "Enemy" && canTakeDamage) {
 			PlayMerdaSound (merdaSound [Random.Range (0, 14)]);
             
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
 			StartCoroutine (this.executeEnemyHitEffectOnLifeDisplay ());
+			StartCoroutine (this.dontTakeDamageForNext(1f));
 
 			if (newSize.x <= 0) {
 				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;
@@ -153,6 +160,21 @@ public class PlayerPlatformerController : PhysicsObject {
 		this.lifeDisplay.color = Color.green;
 		yield return new WaitForSeconds (.05f);
 		this.UpdateDisplayLifeColor ();
+	}
+
+	private IEnumerator dontTakeDamageForNext(float seconds) {
+		this.canTakeDamage = false;
+		yield return new WaitForSeconds (seconds);
+		this.canTakeDamage = true;
+	}
+
+	private IEnumerator makeDamageEffect() {
+		canMakeDamageEffects = false;
+		var spriteRender = this.GetComponent<SpriteRenderer> ();
+		spriteRender.color = Color.red;
+		yield return new WaitForSeconds (.05f);
+		spriteRender.color = Color.white;
+		canMakeDamageEffects = true;
 	}
 
 	public void unlock() {

@@ -17695,6 +17695,8 @@ MonoBehaviour:
   goodWealthyColor: {r: 0.05882353, g: 1, b: 0, a: 1}
   mediumWealthyColor: {r: 1, g: 0.472, b: 0, a: 1}
   badWealthyColor: {r: 1, g: 0, b: 0, a: 1}
+  canTakeDamage: 1
+  damageEffectEnds: 1
   lifeDisplay: {fileID: 399638175}
   levelToLoad: EndGame
   coinSound:
