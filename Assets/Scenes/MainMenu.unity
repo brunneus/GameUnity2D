@@ -672,6 +672,7 @@ MonoBehaviour:
   newGameButton: {fileID: 827121680}
   quitGameButton: {fileID: 379548754}
   helpButton: {fileID: 196788445}
+  canvas: {fileID: 149921337}
 --- !u!82 &773025770
 AudioSource:
   m_ObjectHideFlags: 0

@@ -9,9 +9,8 @@ public class MainMenuManager : MonoBehaviour {
     public Button newGameButton;
 	public Button quitGameButton;
 	public Button helpButton;
-    private static Button newGameButtons;
-	private static Button quitGameButtons;
-	private static Button helpButtons;
+	public GameObject canvas;
+	public static GameObject canvass;
 
     private static AudioSource soundWithVoice;
     private static AudioSource singleSound;
@@ -22,38 +21,32 @@ public class MainMenuManager : MonoBehaviour {
     void Awake()
     {
         if (instance != null && instance != this)
-        {
-            soundWithVoice.enabled = true;
-            singleSound.enabled = false;
-            newGameButtons.onClick.AddListener(NewGame);
-			quitGameButtons.onClick.AddListener(QuitGame);
-			helpButtons.onClick.AddListener(CallHelpScene);
-
-            Destroy(this.gameObject);
-            return;
+        {	Destroy(this.gameObject);
+			Destroy (canvas);
         }
         else
         {
-            newGameButtons = newGameButton;
-            quitGameButtons = quitGameButton;
-			helpButtons = helpButton;
-            newGameButtons.onClick.AddListener(NewGame);
-			quitGameButtons.onClick.AddListener(QuitGame);
-			helpButtons.onClick.AddListener(CallHelpScene);
+			canvass = canvas;
+            newGameButton.onClick.AddListener(NewGame);
+			quitGameButton.onClick.AddListener(QuitGame);
+			helpButton.onClick.AddListener(CallHelpScene);
 
             AudioSource[] sounds = GetComponents<AudioSource>();
             soundWithVoice = sounds[0];
             singleSound = sounds[1];
-            DontDestroyOnLoad(this.gameObject);
+			DontDestroyOnLoad(this.gameObject);
+			DontDestroyOnLoad(canvas);
 
-            soundWithVoice.enabled = true;
-            singleSound.enabled = false;
-            
             instance = this;
         }
+
+		soundWithVoice.enabled = true;
+		singleSound.enabled = false;
+		canvass.SetActive (true);
     }
 
     public void NewGame() {
+		canvass.SetActive (false);
 		GameManagerScript.lastSceneName = levelToLoad;
         SceneManager.LoadScene(levelToLoad);
 
@@ -66,6 +59,7 @@ public class MainMenuManager : MonoBehaviour {
     }
 
 	public void CallHelpScene() {
+		canvass.SetActive (false);
 		SceneManager.LoadScene ("AlertScene");
 	}
 
