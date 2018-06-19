@@ -18,12 +18,15 @@ public class PlayerPlatformerController : PhysicsObject {
 	private bool playingSound;
 	private bool canTakeDamage = true;
 	private bool canMakeDamageEffects = true;
+	private bool isInPowerMode;
 
 	public Color goodWealthyColor;
 	public Color mediumWealthyColor;
 	public Color badWealthyColor;
+	public Color bergasColor;
 
 	public RawImage lifeDisplay;
+	public RawImage bergasDisplay;
 	public string levelToLoad;
 	public AudioClip[] coinSound;
 	public AudioClip[] jumpSound;
@@ -36,7 +39,12 @@ public class PlayerPlatformerController : PhysicsObject {
 		spriteRenderer = GetComponent<SpriteRenderer> ();   
 		animator = GetComponent<Animator> ();
 		locked = true;
+		isInPowerMode = false;
 		visate.GetComponent<VisateScript> ().LetMe (this.gameObject);
+
+		Vector2 sizeDisplayBergas = this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta;
+		Vector2 newSize = new Vector2 (GameManagerScript.getScore() % 20 * 8, sizeDisplayBergas.y);
+		this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 	}
 
 	protected override void ComputeVelocity()
@@ -82,8 +90,9 @@ public class PlayerPlatformerController : PhysicsObject {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
+		Vector2 sizeDisplayBergas = this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta;
 
-		if (other.gameObject.tag == "Enemy" && canTakeDamage) {
+		if (other.gameObject.tag == "Enemy" && canTakeDamage && !isInPowerMode) {
 			PlayMerdaSound (merdaSound [Random.Range (0, 14)]);
             
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
@@ -101,24 +110,43 @@ public class PlayerPlatformerController : PhysicsObject {
 			}
 
 		} else if (other.gameObject.tag == "Point") {
-            GameManagerScript.increaseScore();
 			PlaySound (coinSound [0]);
-
-			if (sizeDisplayLife.x < 160) {
-				Vector2 newSize = new Vector2 (sizeDisplayLife.x + 24, sizeDisplayLife.y);
-				this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
-				StartCoroutine (this.executeLifeHitEffectOnLifeDisplay ());
-			}
-
 			Destroy (other.gameObject);
+
+			if (!isInPowerMode) {
+				GameManagerScript.increaseScore ();
+
+				Vector2 newSize = new Vector2 (sizeDisplayBergas.x + 8, sizeDisplayBergas.y);
+				this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
+				if (newSize.x > 159) {
+					startPowerMode ();
+				}
+			}
 		} else if (other.gameObject.tag == "Objective") {
 			locked = true;
-			Debug.Log (other.gameObject.tag);
 
 			visate.GetComponent<VisateScript> ().CatchMe (this.gameObject);
 		}
 
 		UpdateDisplayLifeColor ();
+	}
+
+	void startPowerMode() {
+		isInPowerMode = true;
+		StartCoroutine (this.DecreaseBergasDisplay ());
+	}
+
+	private IEnumerator DecreaseBergasDisplay() {
+		yield return new WaitForSeconds (1);
+		Vector2 sizeDisplayBergas = this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta;
+		Vector2 newSize = new Vector2 (sizeDisplayBergas.x - 32, sizeDisplayBergas.y);
+		this.bergasDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
+
+		if (newSize.x > 0) {
+			StartCoroutine (this.DecreaseBergasDisplay ());
+		} else {
+			isInPowerMode = false;
+		}
 	}
 
 	void UpdateDisplayLifeColor() {
@@ -152,12 +180,6 @@ public class PlayerPlatformerController : PhysicsObject {
 		
     private IEnumerator executeEnemyHitEffectOnLifeDisplay() {
 		this.lifeDisplay.color = Color.white;
-		yield return new WaitForSeconds (.05f);
-		this.UpdateDisplayLifeColor ();
-	}
-
-	private IEnumerator executeLifeHitEffectOnLifeDisplay() {
-		this.lifeDisplay.color = Color.green;
 		yield return new WaitForSeconds (.05f);
 		this.UpdateDisplayLifeColor ();
 	}
