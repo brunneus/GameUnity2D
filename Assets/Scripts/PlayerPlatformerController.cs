@@ -99,7 +99,7 @@ public class PlayerPlatformerController : PhysicsObject {
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
 
 			StartCoroutine (this.executeEnemyHitEffectOnLifeDisplay ());
-			StartCoroutine (this.dontTakeDamageForNext(1f));
+			StartCoroutine (this.dontTakeDamageForNext(1.5f));
 
 			if (newSize.x <= 0) {
 				GetComponent<Rigidbody2D> ().AddForce (Vector2.up * jumpTakeOffSpeed)	;

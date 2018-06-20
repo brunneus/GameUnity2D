@@ -6,6 +6,7 @@ public class MovingPolentaScript : MonoBehaviour {
 	public int begin;
 	public int end;
 	public float speed = 0.1f;
+	public bool flip = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +19,17 @@ public class MovingPolentaScript : MonoBehaviour {
 		
 		if (transform.localPosition.x <= begin || transform.localPosition.x >= end) {
 			speed *= -1;
+
+			if (flip) {			
+				if (speed < 0)
+					GetComponent<SpriteRenderer>().flipX = true;
+				else
+					GetComponent<SpriteRenderer>().flipX =false;
+			}
+
 		}
+
+
 		transform.Translate (speed, 0, 0);
 	}
 }

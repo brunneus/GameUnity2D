@@ -11891,6 +11891,7 @@ MonoBehaviour:
   begin: 92
   end: 101
   speed: 0.05
+  flip: 0
 --- !u!1 &1065017168
 GameObject:
   m_ObjectHideFlags: 0
@@ -13922,6 +13923,7 @@ GameObject:
   - component: {fileID: 1221579877}
   - component: {fileID: 1221579876}
   - component: {fileID: 1221579878}
+  - component: {fileID: 1221579879}
   m_Layer: 0
   m_Name: SpriteSheet_passaro_0
   m_TagString: Untagged
@@ -13997,7 +13999,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221579872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.26, y: 5.66, z: 0}
+  m_LocalPosition: {x: 0.63, y: 5.66, z: 0}
   m_LocalScale: {x: 0.5011811, y: 0.5011811, z: 0.5011811}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14009,7 +14011,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1221579872}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba4a6bf0b77a8cd4a9831fe2ad6af82e, type: 3}
   m_Name: 
@@ -14150,6 +14152,21 @@ PolygonCollider2D:
       - {x: -1.165, y: -0.59999996}
       - {x: -1.055, y: -0.48999998}
       - {x: -0.935, y: -0.32999998}
+--- !u!114 &1221579879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1221579872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdf447dfb6730b54da8007b0d2a32892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  begin: 0
+  end: 7
+  speed: 0.1
+  flip: 1
 --- !u!1 &1222920061
 GameObject:
   m_ObjectHideFlags: 0
@@ -22646,7 +22663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15, y: -37.100037}
+  m_AnchoredPosition: {x: 15, y: -37.100098}
   m_SizeDelta: {x: 169.64, y: 6.44}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1881328539
