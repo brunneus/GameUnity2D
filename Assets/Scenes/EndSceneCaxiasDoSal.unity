@@ -280,4 +280,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 8300000, guid: ccfc4be4d9f500c4a88beabf22d13515, type: 3}
-  levelToLoad: 
+  levelToLoad: CongratulationsScene
