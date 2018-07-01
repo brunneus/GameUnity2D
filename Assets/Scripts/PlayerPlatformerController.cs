@@ -89,7 +89,7 @@ public class PlayerPlatformerController : PhysicsObject {
 		Vector2 sizeDisplayLife = this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta;
 
 		if (other.gameObject.tag == "Enemy" && canTakeDamage) {
-			PlayMerdaSound (merdaSound [Random.Range (0, 14)]);
+			PlayMerdaSound (merdaSound [Random.Range (0, 6)]);
             
 			Vector2 newSize = new Vector2 (sizeDisplayLife.x - 24, sizeDisplayLife.y);
 			this.lifeDisplay.GetComponent<RectTransform> ().sizeDelta = newSize;
@@ -149,7 +149,7 @@ public class PlayerPlatformerController : PhysicsObject {
     {
 		if (!playingSound) {
 			playingSound = true;
-			AudioSource.PlayClipAtPoint (audio, transform.position, 15);
+			AudioSource.PlayClipAtPoint (audio, transform.position, 7);
 			playingSound = false;
 		}
     }
