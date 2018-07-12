@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase_1_Julio.unity
     guid: 574f9eff760bf3246a54f465c27b4e6e
   - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 48c198b243793f349b9c0eeb8872f2bf
+  - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: e6d48cfee5f1f4b45a6597a8441578c7
   - enabled: 1
@@ -44,3 +47,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fase_3_CaxiasDoSal.unity
     guid: 28ec927facc36334d9bbddcd35807c0a
+  m_configObjects: {}
