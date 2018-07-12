@@ -65,7 +65,7 @@ public class MainMenuManager : MonoBehaviour {
 
     private IEnumerator PlayGameSound()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         singleSound.enabled = true;
     }
 }
